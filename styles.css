@@ -85,3 +85,36 @@ textarea:not([rows]) {
   --purple-600: #8c6991;
   --purple-950: #2f1533;
 }
+
+body {
+  position: relative;
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--purple-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body::before {
+  width: 100%;
+  height: 14.5rem;
+  content: "";
+  position: absolute;
+  top: 0;
+  background-image: url("./assets/images/background-pattern-mobile.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+main {
+  background-color: white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  margin: 8rem 2rem;
+}
