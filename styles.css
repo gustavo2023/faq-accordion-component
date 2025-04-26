@@ -207,6 +207,10 @@ h1 {
   border-bottom: none;
 }
 
+.panel p {
+  margin-bottom: 0.5rem;
+}
+
 @media (min-width: 48rem) {
   body::before {
     background-image: url("./assets/images/background-pattern-desktop.svg");
