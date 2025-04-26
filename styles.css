@@ -102,6 +102,7 @@ body::before {
   content: "";
   position: absolute;
   top: 0;
+  left: 0;
   background-image: url("./assets/images/background-pattern-mobile.svg");
   background-size: cover;
   background-position: top center;
