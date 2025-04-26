@@ -134,3 +134,38 @@ h1 {
   font-weight: 800;
   color: var(--purple-950);
 }
+
+.questions-container {
+  width: 100%;
+}
+
+.accordion {
+  width: 100%;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.2;
+  background-color: white;
+  color: var(--purple-950);
+  text-wrap: wrap;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.active,
+.accordion:hover {
+  color: #ad28eb;
+}
+
+.accordion::after {
+  content: url("./assets/images/icon-plus.svg");
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
