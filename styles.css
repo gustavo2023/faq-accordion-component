@@ -167,7 +167,6 @@ h1 {
   border-bottom: none;
 }
 
-.active,
 .accordion:hover {
   color: #ad28eb;
 }
