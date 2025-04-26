@@ -47,6 +47,7 @@ const initializeAccordionStates = () => {
 
     const panel = button.nextElementSibling;
     button.setAttribute("aria-expanded", "false");
+
     if (panel) {
       panel.style.maxHeight = null;
       panel.setAttribute("aria-hidden", "true");
