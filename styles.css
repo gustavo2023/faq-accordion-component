@@ -160,7 +160,10 @@ h1 {
 }
 
 .accordion:last-of-type {
-  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.accordion.active {
   border-bottom: none;
 }
 
@@ -182,12 +185,19 @@ h1 {
 }
 
 .panel {
-  display: none;
+  width: 100%;
   color: var(--purple-600);
-  padding-bottom: 1.25rem;
   border-bottom: 1px solid var(--purple-100);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  padding-bottom: 0;
 }
 
-.panel:last-child {
+.accordion.active + .panel {
+  padding-bottom: 1.25rem;
+}
+
+.panel:last-of-type {
   border-bottom: none;
 }
