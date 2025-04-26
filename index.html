@@ -26,11 +26,16 @@
         </div>
         <h1>FAQs</h1>
       </section>
+
       <div class="questions-container">
-        <button class="accordion active">
+        <button
+          class="accordion active"
+          aria-expanded="true"
+          aria-controls="panel-1"
+        >
           What is Frontend Mentor, and how will it help me?
         </button>
-        <div class="panel">
+        <div id="panel-1" class="panel" role="region" aria-labelledby="faq-q1">
           <p>
             Frontend Mentor offers realistic coding challenges to help
             developers improve their frontend coding skills with projects in
@@ -38,28 +43,30 @@
             for portfolio building.
           </p>
         </div>
-        <button class="accordion">Is Frontend Mentor free?</button>
-        <div class="panel">
+        <button class="accordion" aria-expanded="false" aria-controls="panel-2">
+          Is Frontend Mentor free?
+        </button>
+        <div id="panel-2" class="panel" role="region" aria-labelledby="faq-q2">
           <p>
             Yes, Frontend Mentor offers both free and premium coding challenges,
             with the free option providing access to a range of projects
             suitable for all skill levels.
           </p>
         </div>
-        <button class="accordion">
+        <button class="accordion" aria-expanded="false" aria-controls="panel-3">
           Can I use Frontend Mentor projects in my portfolio?
         </button>
-        <div class="panel">
+        <div id="panel-3" class="panel" role="region" aria-labelledby="faq-q3">
           <p>
             Yes, you can use projects completed on Frontend Mentor in your
             portfolio. It's an excellent way to showcase your skills to
             potential employers!
           </p>
         </div>
-        <button class="accordion">
+        <button class="accordion" aria-expanded="false" aria-controls="panel-4">
           How can I get help if I'm stuck on a challenge?
         </button>
-        <div class="panel">
+        <div id="panel-4" class="panel" role="region" aria-labelledby="faq-q4">
           The best place to get help is inside Frontend Mentor's Discord
           community. There's a help channel where you can ask questions and seek
           support from other community members.

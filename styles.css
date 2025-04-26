@@ -172,6 +172,11 @@ h1 {
   color: #ad28eb;
 }
 
+.accordion:focus {
+  outline: 2px solid #ad28eb;
+  color: #ad28eb;
+}
+
 .accordion::after {
   content: url("./assets/images/icon-plus.svg");
   flex-shrink: 0;
