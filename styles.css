@@ -155,8 +155,13 @@ h1 {
   align-items: center;
   justify-content: space-between;
   text-align: left;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--purple-100);
+}
+
+.accordion:last-of-type {
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .active,
@@ -168,4 +173,21 @@ h1 {
   content: url("./assets/images/icon-plus.svg");
   flex-shrink: 0;
   margin-left: 1rem;
+}
+
+.active::after {
+  content: url("./assets/images/icon-minus.svg");
+  flex-shrink: 0;
+  margin-left: 1rem;
+}
+
+.panel {
+  display: none;
+  color: var(--purple-600);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--purple-100);
+}
+
+.panel:last-child {
+  border-bottom: none;
 }
