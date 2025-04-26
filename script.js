@@ -12,11 +12,10 @@ const togglePanelVisibility = (panel, isExpanding) => {
 
 const handleAccordionClick = (button) => {
   const panel = button.nextElementSibling;
-  const wasActive = button.classList.contains("active"); // Check state *before* toggling
+  const wasActive = button.classList.contains("active");
 
-  // Toggle the current button's state
   button.classList.toggle("active");
-  const isNowActive = !wasActive; // Determine the new state
+  const isNowActive = !wasActive;
 
   button.setAttribute("aria-expanded", isNowActive);
 
@@ -25,37 +24,29 @@ const handleAccordionClick = (button) => {
   }
 };
 
-// Renamed and refactored function to set initial states
 const initializeAccordionStates = () => {
   const initiallyActiveButton = document.querySelector(".accordion.active");
 
-  // Initialize the initially active button/panel first (if any)
   if (initiallyActiveButton) {
     const panel = initiallyActiveButton.nextElementSibling;
+
     if (panel) {
-      // Temporarily disable transition for immediate height setting
       panel.style.transition = "none";
       panel.style.maxHeight = panel.scrollHeight + "px";
       panel.setAttribute("aria-hidden", "false");
-      // Force reflow to apply height before re-enabling transition
       panel.offsetHeight;
-      // Re-enable transition
       panel.style.transition = "";
-      // Set aria-expanded correctly
       initiallyActiveButton.setAttribute("aria-expanded", "true");
     } else {
-      // Active button without a panel shouldn't be expanded
       initiallyActiveButton.setAttribute("aria-expanded", "false");
     }
   }
 
-  // Ensure all other buttons/panels are correctly initialized
   accordionButtons.forEach((button) => {
-    // Skip the one we might have already initialized above
     if (button === initiallyActiveButton) return;
 
     const panel = button.nextElementSibling;
-    button.setAttribute("aria-expanded", "false"); // Not initially active
+    button.setAttribute("aria-expanded", "false");
     if (panel) {
       panel.style.maxHeight = null;
       panel.setAttribute("aria-hidden", "true");
@@ -63,12 +54,10 @@ const initializeAccordionStates = () => {
   });
 };
 
-// Use the renamed initialization function
 document.addEventListener("DOMContentLoaded", initializeAccordionStates);
 
 accordionButtons.forEach((button, index, allButtons) => {
   button.addEventListener("click", () => {
-    // Pass the specific button that was clicked
     handleAccordionClick(button);
   });
 
@@ -87,14 +76,14 @@ accordionButtons.forEach((button, index, allButtons) => {
       if (prevButton) {
         prevButton.focus();
       } else {
-        allButtons[allButtons.length - 1].focus(); // Wrap to last
+        allButtons[allButtons.length - 1].focus();
       }
     } else if (isDown) {
       const nextButton = allButtons[index + 1];
       if (nextButton) {
         nextButton.focus();
       } else {
-        allButtons[0].focus(); // Wrap to first
+        allButtons[0].focus();
       }
     } else if (isHome) {
       allButtons[0].focus();
